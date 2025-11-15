@@ -1,32 +1,57 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Movie } from "@/types/movie";
 
-export default function HeroBanner({ movie }: { movie: Movie }) {
-  const backdrop =
-    movie?.backdrop_path
-      ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
-      : "/placeholder.jpg"; // using your existing local image
+interface HeroBannerProps {
+  movies: Movie[];
+}
+
+export default function HeroBanner({ movies }: HeroBannerProps) {
+  const [index, setIndex] = useState(0);
+
+  // Auto-rotate every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % movies.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [movies.length]);
+
+  const movie = movies[index];
+
+  const backdrop = movie?.backdrop_path
+    ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
+    : "/placeholder.jpg";
 
   return (
     <section className="relative w-full h-[85vh] overflow-hidden">
-      <Image
-        src={backdrop}
-        alt={movie?.title ?? "Movie"}
-        fill
-        priority
-        className="object-cover object-top brightness-[0.55]"
-      />
 
+      {/* Fade Transition */}
+      <div className="absolute inset-0 transition-opacity duration-1000 ease-in-out">
+        <Image
+          key={backdrop}
+          src={backdrop}
+          alt={movie?.title || "Movie"}
+          fill
+          priority
+          className="object-cover object-top brightness-[0.55]"
+        />
+      </div>
+
+      {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
-      <div className="absolute left-10 bottom-24 w-full max-w-2xl text-white space-y-5">
+      {/* Content */}
+      <div className="absolute left-10 bottom-24 w-full max-w-2xl text-white space-y-5 animate-fadeIn">
         <h1 className="text-5xl md:text-7xl font-extrabold drop-shadow-lg">
-          {movie?.title ?? "Untitled Movie"}
+          {movie?.title || "Untitled Movie"}
         </h1>
 
         <p className="text-lg text-gray-200 max-w-xl leading-relaxed drop-shadow-md hidden md:block">
           {movie?.overview
-            ? movie.overview.slice(0, 120) + "..."
+            ? movie.overview.slice(0, 150) + "..."
             : "No description available."}
         </p>
 
