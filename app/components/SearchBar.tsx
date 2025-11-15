@@ -18,7 +18,7 @@ export default function SearchBar() {
     <form onSubmit={handleSubmit} className="flex items-center gap-2">
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Search movies..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         className="px-4 py-2 rounded-lg bg-gray-500/20 text-white placeholder-white/40 outline-none"
