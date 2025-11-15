@@ -44,12 +44,12 @@ export default function HeroBanner({ movies }: HeroBannerProps) {
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
 
       {/* Content */}
-      <div className="absolute left-10 bottom-24 w-full max-w-2xl text-white space-y-5 animate-fadeIn">
-        <h1 className="text-5xl md:text-7xl font-extrabold drop-shadow-lg">
+      <div className="absolute left-10 bottom-16 md:bottom-20 w-full max-w-2xl text-white space-y-4 animate-fadeIn">
+        <h1 className="text-4xl md:text-5xl font-bold drop-shadow-lg leading-tight">
           {movie?.title || "Untitled Movie"}
         </h1>
 
-        <p className="text-lg text-gray-200 max-w-xl leading-relaxed drop-shadow-md hidden md:block">
+       <p className="text-base md:text-lg text-gray-200 max-w-xl leading-relaxed drop-shadow-md hidden md:block">
           {movie?.overview
             ? movie.overview.slice(0, 150) + "..."
             : "No description available."}
