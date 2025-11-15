@@ -59,3 +59,12 @@ export async function searchMovies(query: string) {
   }
 }
 
+
+export async function fetchMovieTrailer(id: number) {
+  const data = await tmdbFetch(`/movie/${id}/videos?language=en-US`);
+  return data.results?.find(
+    (video: any) =>
+      video.type === "Trailer" && video.site === "YouTube"
+  );
+}
+
