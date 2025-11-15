@@ -1,36 +1,152 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🎬 Streaming Dashboard Clone — Next.js + TMDB API
 
-## Getting Started
+A Netflix-style streaming dashboard built with Next.js 14 App Router, TypeScript, Tailwind CSS, and TMDB API.
+The app features a dynamic homepage with an auto-sliding hero banner, multiple movie rows, a detailed movie page, and a responsive UI optimized for performance.
 
-First, run the development server:
+🚀 Live Demo
 
-```bash
+🔗 Vercel Deployment:
+https://my-streaming-dashboard-main.vercel.app/
+
+🔗 GitHub Repository:
+https://github.com/Aswinwolf/my-streaming-dashboard-main
+
+📌 Features
+🎥 Homepage
+
+Auto-sliding Hero Banner (Netflix style)
+
+Smooth fade transitions
+
+Movie title & overview
+
+"Play" + "My List" buttons (UI only)
+
+🔍 Search
+
+Search movies using TMDB
+
+Fully responsive search results grid
+
+🎞 Movie Rows
+
+Horizontal scrollable movie categories including:
+
+Popular
+
+Trending
+
+Top Rated
+
+Now Playing
+
+Upcoming
+
+Action
+
+Horror
+
+Comedy
+
+Romance
+
+Documentary
+
+📄 Movie Detail Page
+
+Backdrop + poster
+
+Title, description, metadata
+
+Release date, genres
+
+Fully responsive layout
+
+⚙ Technical Highlights
+
+Server Components for fast rendering
+
+Efficient TMDB API integration
+
+Environment variables support
+
+Optimized images using next/image
+
+Clean file structure
+
+Deployed and optimized on Vercel
+
+📁 Folder Structure
+my-streaming-dashboard/
+├─ app/
+│  ├─ components/
+│  │  ├─ Header.tsx
+│  │  ├─ HeroBanner.tsx
+│  │  ├─ MovieRow.tsx
+│  │  ├─ MovieCard.tsx
+│  │  
+│  ├─ movie/
+│  │  └─ [id]/
+│  │     └─ page.tsx
+│  ├─ search/
+│  │  └─ page.tsx
+│  ├─ layout.tsx
+│  ├─ page.tsx
+│  ├─ globals.css
+├─ lib/
+│  └─ tmdb.ts
+├─ types/
+│  └─ movie.ts
+├─ public/
+├─ next.config.js
+├─ tailwind.config.js
+├─ .env.local (ignored)
+├─ README.md
+└─ AI_Report.md
+
+🛠️ Tech Stack
+
+Next.js 14 (App Router)
+
+TypeScript
+
+Tailwind CSS
+
+TMDB API
+
+Vercel Deployment
+
+🔧 Installation & Setup
+1️⃣ Clone the repository
+git clone https://github.com/Aswinwolf/my-streaming-dashboard-main.git
+cd my-streaming-dashboard-main
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Add environment variable
+
+Create .env.local:
+
+TMDB_API_KEY=your_tmdb_api_key_here
+
+4️⃣ Run the project
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Visit:
+✨ http://localhost:3000/
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🌐 Deployment (Vercel)
 
-## Learn More
+Push to GitHub
 
-To learn more about Next.js, take a look at the following resources:
+Import repo into Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Add environment variable:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+TMDB_API_KEY=your_key
 
-## Deploy on Vercel
+🧠 AI Usage Report
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See AI_Report.md for information on how AI assisted in development.
